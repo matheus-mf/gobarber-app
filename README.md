@@ -12,3 +12,4 @@
 - [React Navigation](https://reactnavigation.org/)
 - [React Native Vector Icons](https://yarnpkg.com/package/react-native-vector-icons)
 - [Unform](https://unform.dev/)
+- [Yup](https://github.com/jquense/yup)
