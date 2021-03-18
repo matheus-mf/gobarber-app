@@ -14,3 +14,4 @@
 - [Unform](https://unform.dev/)
 - [Yup](https://github.com/jquense/yup)
 - [axios](https://github.com/axios/axios)
+- [react-native-community/async-storage](https://yarnpkg.com/package/@react-native-community/async-storage)
