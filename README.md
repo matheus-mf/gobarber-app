@@ -15,3 +15,20 @@
 - [Yup](https://github.com/jquense/yup)
 - [axios](https://github.com/axios/axios)
 - [react-native-community/async-storage](https://yarnpkg.com/package/@react-native-community/async-storage)
+
+
+## Iniciar em desenvolvimento
+
+### Android
+
+```shell
+yarn start
+```
+
+```shell
+yarn android
+```
+
+```shell
+adb reverse tcp:<PORT_SERVE> tcp:<PORT_SERVE>
+```
