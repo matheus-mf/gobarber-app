@@ -95,16 +95,19 @@ const CreateAppointment: React.FC = () => {
     setShowDatePicker(state => !state);
   }, []);
 
-  const handleDateChange = useCallback((event: any, date: Date | undefined) => {
-    if (Platform.OS === 'android') {
-      setShowDatePicker(false);
-    }
+  const handleDateChanged = useCallback(
+    (event: any, date: Date | undefined) => {
+      if (Platform.OS === 'android') {
+        setShowDatePicker(false);
+      }
 
-    if (date) {
-      setSelectedHour(0);
-      setSelectedDate(date);
-    }
-  }, []);
+      if (date) {
+        setSelectedHour(0);
+        setSelectedDate(date);
+      }
+    },
+    [],
+  );
 
   const handleSelectHour = useCallback((hour: number) => {
     setSelectedHour(hour);
@@ -201,7 +204,7 @@ const CreateAppointment: React.FC = () => {
             <DateTimePicker
               mode="date"
               display="calendar"
-              onChange={handleDateChange}
+              onChange={handleDateChanged}
               textColor="#f4ede8"
               value={selectedDate}
             />

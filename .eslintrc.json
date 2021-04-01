@@ -26,13 +26,12 @@
     "prettier"
   ],
   "rules": {
+    "no-unused-expressions": "off",
     "camelcase": "off",
-    "import/prefer-default-export": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
-    "import/no-duplicates": "off",
     "react/jsx-filename-extension": [
       1,
       {
@@ -41,6 +40,8 @@
         ]
       }
     ],
+    "import/prefer-default-export": "off",
+    "import/no-duplicates": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

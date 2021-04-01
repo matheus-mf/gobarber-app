@@ -16,27 +16,25 @@ export const Title = styled.Text`
   margin: 64px 0 24px;
 `;
 
-export const ForgetPassword = styled.TouchableOpacity`
+export const ForgotPassword = styled.TouchableOpacity`
   margin-top: 24px;
 `;
 
-export const ForgetPasswordText = styled.Text`
-  color: #f4ede8;
+export const ForgotPasswordText = styled.Text`
   font-size: 16px;
+  color: #f4ede8;
   font-family: 'RobotoSlab-Regular';
 `;
 
 export const CreateAccountButton = styled.TouchableOpacity`
   position: absolute;
-  right: 0;
-  bottom: 0;
   left: 0;
-  padding: 16px 0 ${16 + getBottomSpace()}px;
-
+  bottom: 0;
+  right: 0;
   background: #312e38;
   border-top-width: 1px;
   border-color: #232129;
-
+  padding: 16px 0 ${16 + getBottomSpace()}px;
   justify-content: center;
   align-items: center;
   flex-direction: row;

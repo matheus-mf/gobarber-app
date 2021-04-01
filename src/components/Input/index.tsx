@@ -1,4 +1,11 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useImperativeHandle,
+  forwardRef,
+  useCallback,
+} from 'react';
 import { TextInputProps } from 'react-native';
 import { useField } from '@unform/core';
 
@@ -7,37 +14,51 @@ import { Container, TextInput, Icon } from './styles';
 interface InputProps extends TextInputProps {
   name: string;
   icon: string;
+  containerStyle?: {};
 }
 
-interface InputValueReference {
+interface InputValueRef {
   value: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
+interface InputRef {
+  focus(): void;
+}
+
+const Input: React.RefForwardingComponent<InputRef, InputProps> = (
+  { name, icon, containerStyle, ...rest },
+  ref,
+) => {
   const inputElementRef = useRef<any>(null);
 
   const { registerField, defaultValue = '', fieldName, error } = useField(name);
-  const inputValueRef = useRef<InputValueReference>({ value: defaultValue });
+  const inputValueRef = useRef<InputValueRef>({ value: defaultValue });
 
-  const [isFocused, setFocused] = useState(false);
-  const [isFilled, setFilled] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
 
   const handleInputFocus = useCallback(() => {
-    setFocused(true);
+    setIsFocused(true);
   }, []);
 
   const handleInputBlur = useCallback(() => {
-    setFocused(false);
+    setIsFocused(false);
 
-    setFilled(!!inputValueRef.current.value);
+    setIsFilled(!!inputValueRef.current.value);
   }, []);
+
+  useImperativeHandle(ref, () => ({
+    focus() {
+      inputElementRef.current.focus();
+    },
+  }));
 
   useEffect(() => {
     registerField<string>({
       name: fieldName,
       ref: inputValueRef.current,
       path: 'value',
-      setValue(ref: any, value) {
+      setValue(ref: any, value: string) {
         inputValueRef.current.value = value;
         inputElementRef.current.setNativeProps({ text: value });
       },
@@ -49,7 +70,7 @@ const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container isFocused={isFocused} isErrored={!!error}>
+    <Container style={containerStyle} isFocused={isFocused} isErrored={!!error}>
       <Icon
         name={icon}
         size={20}
@@ -72,4 +93,4 @@ const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
   );
 };
 
-export default Input;
+export default forwardRef(Input);

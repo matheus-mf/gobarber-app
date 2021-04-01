@@ -18,15 +18,13 @@ export const Title = styled.Text`
 
 export const BackToSignIn = styled.TouchableOpacity`
   position: absolute;
-  right: 0;
-  bottom: 0;
   left: 0;
-  padding: 16px 0 ${16 + getBottomSpace()}px;
-
+  bottom: 0;
+  right: 0;
   background: #312e38;
   border-top-width: 1px;
   border-color: #232129;
-
+  padding: 16px 0 ${16 + getBottomSpace()}px;
   justify-content: center;
   align-items: center;
   flex-direction: row;
