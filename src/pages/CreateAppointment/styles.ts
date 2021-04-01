@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Platform, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RectButton } from 'react-native-gesture-handler';
 import { Provider } from './index';
@@ -22,7 +22,7 @@ export const Header = styled.View`
   align-items: center;
 
   padding: 24px;
-  padding-top: ${Platform.OS === 'ios' ? getStatusBarHeight() + 24 : 24}px;
+  padding-top: ${getStatusBarHeight() + 24}px;
   background: #28262e;
 `;
 
@@ -70,4 +70,28 @@ export const ProviderName = styled.Text<ProviderNameProps>`
   font-family: 'RobotoSlab-Medium';
   color: ${props => (props.selected ? '#232129' : '#f4ebe8')};
   margin-left: 8px;
+`;
+
+export const Calendar = styled.View``;
+
+export const Title = styled.Text`
+  font-size: 24px;
+  font-family: 'RobotoSlab-Medium';
+  color: #f4ebe8;
+  margin: 0 24px 24px;
+`;
+
+export const OpenDatePickerButton = styled(RectButton)`
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  background: #ff9000;
+  border-radius: 10px;
+  margin: 0 24px;
+`;
+
+export const OpenDatePickerButtonText = styled.Text`
+  font-size: 16px;
+  font-family: 'RobotoSlab-Medium';
+  color: #232129;
 `;
