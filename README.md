@@ -16,6 +16,7 @@
 - [axios](https://github.com/axios/axios)
 - [Async-storage](https://yarnpkg.com/package/@react-native-community/async-storage)
 - [DateTimePicker](https://github.com/react-native-datetimepicker/datetimepicker)
+- [date-fns](https://date-fns.org/)
 
 
 ## Iniciar em desenvolvimento
