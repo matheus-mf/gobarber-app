@@ -17,6 +17,7 @@
 - [Async-storage](https://yarnpkg.com/package/@react-native-community/async-storage)
 - [DateTimePicker](https://github.com/react-native-datetimepicker/datetimepicker)
 - [date-fns](https://date-fns.org/)
+- [React Native Image Picker](https://github.com/react-native-image-picker/react-native-image-picker)
 
 
 ## Iniciar em desenvolvimento
