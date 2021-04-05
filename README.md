@@ -18,6 +18,7 @@
 - [DateTimePicker](https://github.com/react-native-datetimepicker/datetimepicker)
 - [date-fns](https://date-fns.org/)
 - [React Native Image Picker](https://github.com/react-native-image-picker/react-native-image-picker)
+- [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
 
 
 ## Iniciar em desenvolvimento

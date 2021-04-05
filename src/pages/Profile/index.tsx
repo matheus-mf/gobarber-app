@@ -41,7 +41,7 @@ interface ProfileFormData {
 }
 
 const Profile: React.FC = () => {
-  const { user, updateUser } = useAuth();
+  const { user, updateUser, singOut } = useAuth();
 
   const navigation = useNavigation();
 
@@ -248,8 +248,10 @@ const Profile: React.FC = () => {
               />
 
               <Button onPress={() => formRef.current?.submitForm()}>
-                Confirma mudanças
+                Confirmar mudanças
               </Button>
+
+              <Button onPress={singOut}>Sair</Button>
             </Form>
           </Container>
         </ScrollView>
